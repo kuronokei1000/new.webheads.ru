@@ -31,17 +31,17 @@
                 <ul>
                     <li>
                         Email:
-                        <a href="mailto:info@webheads.ru">info@webheads.ru</a>
+                        <a href="mailto:a@webheads.ru">a@webheads.ru</a>
                     </li>
 
                     <li>
                         Телефон:
-                        <a href="tel:+79999999999">+7 (999) 999-99-99</a>
+                        <a href="tel:+79058030638">+7 (905) 803-06-38</a>
                     </li>
 
                     <li>
                         Telegram:
-                        <a href="https://t.me/webheads" target="_blank">@webheads</a>
+                        <a href="https://t.me/fomdim" target="_blank">@fomdim</a>
                     </li>
                 </ul>
             </div>
@@ -50,7 +50,7 @@
 
         <div class="footer__bottom">
             <p>
-                © <?= date('Y'); ?> WEBHEADS. Все права защищены.
+                © <?= date('Y'); ?> ИП Фоминых Д.Е. Все права защищены.
             </p>
         </div>
     </div>
