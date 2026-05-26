@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Если файл или папка реально существуют - отдаем как есть
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Все остальные адреса отправляем в роутер
+RewriteRule ^(.*)$ /urlrewrite.php [L,QSA]
+
+# Страницы ошибок
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+<IfModule mod_headers.c>
+    # Запрещаем индексацию сайта поисковыми роботами (диплом же)
+    Header set X-Robots-Tag "noindex, nofollow"
+
+    # Запрещаем кэширование (диплом же)
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</IfModule>

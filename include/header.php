@@ -9,12 +9,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/favicon-180.png">
+
     <title>WEBHEADS — Разработка и поддержка сайтов</title>
     <meta name="description" content="Разработка, поддержка и доработка сайтов и интернет-магазинов.">
 
-    <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/adaptive.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
