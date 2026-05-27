@@ -62,7 +62,7 @@ if ($newsItem) {
                         <?php endif; ?>
 
                         <div class="news-detail__content">
-                            <?= nl2br($newsItem['detail_text']) ?>
+                            <?= $newsItem['detail_text'] ?>
                         </div>
 
                     </article>

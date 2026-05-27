@@ -997,3 +997,31 @@ img {
 body.popup-open {
     overflow: hidden;
 }
+
+
+.form-success {
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--color-light);
+    border: 0.0625rem solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+
+.form-success h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+    color: var(--color-title);
+}
+
+.form-success p {
+    margin: 0;
+    color: var(--color-text-secondary);
+}
+
+.form-error {
+    padding: 0.875rem 1rem;
+    color: #8a1f1f;
+    background: #fff0f0;
+    border: 0.0625rem solid #ffd1d1;
+    border-radius: var(--border-radius-small);
+}

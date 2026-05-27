@@ -82,6 +82,9 @@
             <input type="email" name="email" placeholder="E-mail">
             <textarea name="message" placeholder="Описание проекта" required></textarea>
 
+            <?php $site = $site ?? new Site(); ?>
+            <?= $site->renderCaptcha(); ?>
+
             <button type="submit">
                 Отправить заявку
             </button>

@@ -246,34 +246,7 @@
 
             </div>
         </section>
-
-        <section class="feedback section" id="feedback">
-            <div class="container">
-
-                <div class="section__heading">
-                <span class="section__subtitle">
-                    Связаться с нами
-                </span>
-
-                    <h2 class="section__title">
-                        Расскажите о своем проекте
-                    </h2>
-                </div>
-
-                <form action="/ajax/feedback.php" method="POST" class="feedback-form">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="tel" name="phone" placeholder="Телефон" required>
-                    <input type="email" name="email" placeholder="E-mail">
-                    <textarea name="message" placeholder="Описание проекта" required></textarea>
-
-                    <button type="submit">
-                        Отправить заявку
-                    </button>
-                </form>
-
-            </div>
-        </section>
-
+        <?include $_SERVER['DOCUMENT_ROOT'] . '/include/form.php';?>
     </main>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/include/footer.php'; ?>
