@@ -57,7 +57,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/functions.php';
                 </ul>
             </nav>
 
-            <a href="#feedback" class="header__button">Оставить заявку</a>
+            <a href="#" class="header__button js-open-feedback">Оставить заявку</a>
 
         </div>
     </div>

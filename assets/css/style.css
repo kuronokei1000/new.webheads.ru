@@ -914,3 +914,86 @@ img {
 .portfolio-detail__tags {
     margin: 0 0 1.5rem;
 }
+
+.popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--container-padding);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+}
+
+.popup.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--color-overlay);
+}
+
+.popup__content {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 42rem);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.18);
+}
+
+.popup__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--color-text);
+    background: var(--color-light-gray);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color var(--transition), background var(--transition);
+}
+
+.popup__close:hover {
+    color: var(--color-accent);
+    background: var(--color-gray);
+}
+
+.popup__heading {
+    margin-bottom: 1.5rem;
+    padding-right: 2.5rem;
+}
+
+.popup__heading h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.25rem);
+    line-height: 1.25;
+    color: var(--color-title);
+}
+
+.popup__form {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+body.popup-open {
+    overflow: hidden;
+}

@@ -58,6 +58,35 @@
 
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/form.js"></script>
+<div class="popup" id="feedback-popup">
+    <div class="popup__overlay js-close-feedback"></div>
 
+    <div class="popup__content">
+        <button type="button" class="popup__close js-close-feedback">
+            ×
+        </button>
+
+        <div class="popup__heading">
+            <span class="section__subtitle">
+                Обратная связь
+            </span>
+
+            <h2>
+                Оставить заявку
+            </h2>
+        </div>
+
+        <form action="/ajax/feedback.php" method="POST" class="feedback-form popup__form">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <input type="email" name="email" placeholder="E-mail">
+            <textarea name="message" placeholder="Описание проекта" required></textarea>
+
+            <button type="submit">
+                Отправить заявку
+            </button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
