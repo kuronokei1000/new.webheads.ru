@@ -1,9 +1,18 @@
 <?php
 
+/**
+ * Базовый класс для работы с сайтом
+ * @author Димитрий Фоминых
+ * @property PDO $pdo
+ */
 class Site
 {
     private PDO $pdo;
 
+    /**
+     * Магическая, запускается при каждом создании объекта класса
+     * @param PDO|null $pdo
+     */
     public function __construct(?PDO $pdo = null)
     {
         if ($pdo) {
@@ -15,6 +24,10 @@ class Site
         $this->pdo = $db->getConnection();
     }
 
+    /**
+     * Возвращает HTML-код капчи от Yandex SmartCaptcha
+     * @return string
+     */
     public function renderCaptcha(): string
     {
         $config = require $_SERVER['DOCUMENT_ROOT'] . '/include/config.php';
@@ -28,6 +41,11 @@ class Site
     ';
     }
 
+    /**
+     * Проверяет валидность капчи от Yandex SmartCaptcha
+     * @param string $token
+     * @return bool
+     */
     public function checkCaptcha(string $token): bool
     {
         $config = require $_SERVER['DOCUMENT_ROOT'] . '/include/config.php';
@@ -63,6 +81,11 @@ class Site
         return isset($result['status']) && $result['status'] === 'ok';
     }
 
+    /**
+     * Добавляет результаты формы обратной связи в бд
+     * @param array $data
+     * @return void
+     */
     public function addFeedback(array $data): void
     {
         $stmt = $this->pdo->prepare("
@@ -87,6 +110,11 @@ class Site
         ]);
     }
 
+    /**
+     * Отправляет email с результатами формы обратной связи
+     * @param array $data
+     * @return bool
+     */
     public function sendFeedbackEmail(array $data): bool
     {
         $config = require $_SERVER['DOCUMENT_ROOT'] . '/include/config.php';
@@ -108,6 +136,11 @@ class Site
         return mail($to, $subject, $message, implode("\r\n", $headers));
     }
 
+    /**
+     * Возвращает список новостей
+     * @param int $limit
+     * @return array
+     */
     public function getNewsList(int $limit = 0): array
     {
         $sql = "
@@ -123,6 +156,11 @@ class Site
         return $this->pdo->query($sql)->fetchAll();
     }
 
+    /**
+     * Возвращает новость по URL
+     * @param string $url
+     * @return array|null
+     */
     public function getNewsByUrl(string $url): ?array
     {
         $stmt = $this->pdo->prepare("
@@ -138,6 +176,11 @@ class Site
         return $result ?: null;
     }
 
+    /**
+     * Обработчик просмотров новости
+     * @param int $id
+     * @return void
+     */
     public function increaseNewsViews(int $id): void
     {
         $stmt = $this->pdo->prepare("
@@ -172,6 +215,11 @@ class Site
         return $this->pdo->query($sql)->fetchAll();
     }
 
+    /**
+     * Возвращает элемент портфолио по URL
+     * @param string $url
+     * @return array|null
+     */
     public function getPortfolioByUrl(string $url): ?array
     {
         $stmt = $this->pdo->prepare("
@@ -190,6 +238,11 @@ class Site
         return $result ?: null;
     }
 
+    /**
+     * Создает символьный код из текста (для url'ов)
+     * @param string $text
+     * @return string
+     */
     public function createSlug(string $text): string
     {
         $text = mb_strtolower(trim($text));
@@ -211,6 +264,11 @@ class Site
         return $text ?: 'material-' . time();
     }
 
+    /**
+     * Загружает изображение на сервер
+     * @param array $file
+     * @return string|null
+     */
     public function uploadImage(array $file): ?string
     {
         if (empty($file['name']) || $file['error'] !== UPLOAD_ERR_OK) {
@@ -240,6 +298,12 @@ class Site
         return '/assets/img/upload/' . $fileName;
     }
 
+    /**
+     * Добавляет материал в базу данных (для новостей и портфолио)
+     * @param string $section
+     * @param array $data
+     * @return void
+     */
     public function addMaterial(string $section, array $data): void
     {
         $title = trim($data['title'] ?? '');
