@@ -56,9 +56,6 @@
         </div>
     </div>
 </footer>
-
-<script src="/assets/js/main.js"></script>
-<script src="/assets/js/form.js"></script>
 <div class="popup" id="feedback-popup">
     <div class="popup__overlay js-close-feedback"></div>
 
@@ -92,5 +89,6 @@
         </form>
     </div>
 </div>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -52,9 +52,8 @@
                         поддержке и модернизации веб-проектов различной сложности.
                     </p>
                     <p>
-                        Основным направлением деятельности является создание
-                        корпоративных сайтов, интернет-магазинов и поддержка
-                        существующих веб-ресурсов.
+                        Профессиональная разработка модулей и доработки любой сложности
+                        для CMS Bitrix, CRM Bitrix24, CMS OpenCart, CMS WordPress.
                     </p>
                 </div>
             </div>
@@ -116,21 +115,21 @@
                 </div>
                 <div class="portfolio__grid">
                     <div class="portfolio-card">
-                        <img src="/assets/img/portfolio/project-1.jpg" alt="">
+                        <img src="/assets/img/portfolio/1.png" alt="">
                         <h3>
-                            Корпоративный сайт
+                            Оптово-розничный магазин тканей и текстиля
                         </h3>
                     </div>
                     <div class="portfolio-card">
-                        <img src="/assets/img/portfolio/project-2.jpg" alt="">
+                        <img src="/assets/img/portfolio/2.png" alt="">
                         <h3>
-                            Интернет-магазин
+                            Интернет-магазин электротранспорта и комплектующих
                         </h3>
                     </div>
                     <div class="portfolio-card">
-                        <img src="/assets/img/portfolio/project-3.jpg" alt="">
+                        <img src="/assets/img/portfolio/3.png" alt="">
                         <h3>
-                            Веб-сервис
+                            Интернет-магазин иностранной литературы
                         </h3>
                     </div>
                 </div>
