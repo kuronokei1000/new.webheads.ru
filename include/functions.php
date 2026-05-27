@@ -56,6 +56,47 @@ class Site
         $stmt->execute(['id' => $id]);
     }
 
+    public function getPortfolioList(int $limit = 0): array
+    {
+        $sql = "
+        SELECT
+            id,
+            title,
+            url,
+            preview_text,
+            technologies,
+            image,
+            project_url,
+            created_at
+        FROM portfolio
+        ORDER BY created_at DESC
+    ";
+
+        if ($limit > 0) {
+            $sql .= " LIMIT " . (int)$limit;
+        }
+
+        return $this->pdo->query($sql)->fetchAll();
+    }
+
+    public function getPortfolioByUrl(string $url): ?array
+    {
+        $stmt = $this->pdo->prepare("
+        SELECT *
+        FROM portfolio
+        WHERE url = :url
+        LIMIT 1
+    ");
+
+        $stmt->execute([
+            'url' => $url,
+        ]);
+
+        $result = $stmt->fetch();
+
+        return $result ?: null;
+    }
+
     public function createSlug(string $text): string
     {
         $text = mb_strtolower(trim($text));

@@ -12,6 +12,14 @@ $routes = [
         ],
     ],
 
+    [
+        'pattern' => '#^portfolio/([a-zA-Z0-9_-]+)/?$#',
+        'path' => '/portfolio/detail/index.php',
+        'params' => [
+            'url' => 1,
+        ],
+    ],
+
     // Образец для хардкода следующих обработчиков:
     /*
     [
