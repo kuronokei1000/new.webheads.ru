@@ -10,6 +10,10 @@ class Database
         $this->createTables();
     }
 
+    /**
+     * Подключится к бд
+     * @return void
+     */
     private function connect(): void
     {
         $config = require $_SERVER['DOCUMENT_ROOT'] . '/include/config.php';
@@ -29,12 +33,19 @@ class Database
         }
     }
 
-
+    /**
+     * Получить подключение к бд
+     * @return PDO
+     */
     public function getConnection(): PDO
     {
         return $this->pdo;
     }
 
+    /**
+     * Создать необходимые таблицы в базе данных
+     * @return void
+     */
     private function createTables(): void
     {
         $queries = [];

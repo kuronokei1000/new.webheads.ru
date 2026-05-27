@@ -95,8 +95,8 @@
                     <div class="service-card">
                         <h3>Программирование</h3>
                         <p>
-                            Подключаем динамический функционал, базу данных,
-                            обработку форм и серверную часть проекта.
+                            Подключаем динамический функционал, интеграции со сторонними ресурсами,
+                            настраиваем почту и поисковые системы.
                         </p>
                     </div>
 
@@ -119,11 +119,9 @@
                 <div class="technologies__list">
                     <span>PHP</span>
                     <span>MySQL</span>
-                    <span>PDO</span>
                     <span>JavaScript</span>
                     <span>HTML5</span>
                     <span>CSS3</span>
-                    <span>Git</span>
                 </div>
 
             </div>

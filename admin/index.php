@@ -68,7 +68,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
                 <span class="section__subtitle">
                     Администрирование
                 </span>
-
                     <h1 class="section__title">
                         Управление материалами сайта
                     </h1>
@@ -113,7 +112,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
                             <select name="section" required>
                                 <option value="">Выберите раздел</option>
                                 <option value="news">Новости</option>
-                                <option value="services">Услуги</option>
                                 <option value="portfolio">Портфолио</option>
                             </select>
 
@@ -160,7 +158,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/header.php';
 
 <?php if (!empty($_SESSION['admin_auth'])): ?>
     <script src="https://cdn.tiny.cloud/1/1mgt6u1kzkpvdyt4megz88txn9yvseg1eznmnqk8f4fe0ei8/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-
     <script>
         tinymce.init({
             selector: '.js-editor',

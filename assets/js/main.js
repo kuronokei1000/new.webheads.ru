@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* обработка формы */
 document.addEventListener('DOMContentLoaded', function () {
-    const forms = document.querySelectorAll('.feedback-form');
+    const forms = document.querySelectorAll('.feedback-form:not(.admin-form)');
 
     forms.forEach(function (form) {
         form.addEventListener('submit', function (event) {

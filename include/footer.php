@@ -6,19 +6,20 @@
                 <a href="/" class="footer__logo">WEBHEADS</a>
 
                 <p class="footer__description">
-                    Разработка, поддержка и доработка корпоративных сайтов
-                    и интернет-магазинов.
+                    Разработка и поддержка <br> веб-проектов.
                 </p>
             </div>
 
             <div class="footer__nav">
-                <h3>Навигация</h3>
-
                 <ul>
                     <li><a href="/">Главная</a></li>
                     <li><a href="/about/">О компании</a></li>
                     <li><a href="/services/">Услуги</a></li>
                     <li><a href="/portfolio/">Портфолио</a></li>
+                </ul>
+            </div>
+            <div class="footer__nav">
+                <ul>
                     <li><a href="/technologies/">Технологии</a></li>
                     <li><a href="/news/">Новости</a></li>
                     <li><a href="/contacts/">Контакты</a></li>

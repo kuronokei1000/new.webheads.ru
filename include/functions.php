@@ -281,34 +281,6 @@ class Site
             return;
         }
 
-        if ($section === 'services') {
-            $stmt = $this->pdo->prepare("
-            INSERT INTO services (
-                title,
-                url,
-                preview_text,
-                detail_text,
-                image
-            ) VALUES (
-                :title,
-                :url,
-                :preview_text,
-                :detail_text,
-                :image
-            )
-        ");
-
-            $stmt->execute([
-                'title' => $title,
-                'url' => $url,
-                'preview_text' => $previewText,
-                'detail_text' => $detailText,
-                'image' => $image,
-            ]);
-
-            return;
-        }
-
         if ($section === 'portfolio') {
             $stmt = $this->pdo->prepare("
             INSERT INTO portfolio (
