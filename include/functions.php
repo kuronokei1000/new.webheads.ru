@@ -108,17 +108,33 @@ class Site
 
     public function addMaterial(string $section, array $data): void
     {
-        $title = trim($data['title']);
-        $url = trim($data['url']) ?: $this->createSlug($title);
-        $previewText = trim($data['preview_text']);
-        $detailText = trim($data['detail_text']);
+        $title = trim($data['title'] ?? '');
+        $url = trim($data['url'] ?? '') ?: $this->createSlug($title);
+        $previewText = trim($data['preview_text'] ?? '');
+        $detailText = trim($data['detail_text'] ?? '');
         $image = $data['image'] ?? null;
+        $projectUrl = trim($data['project_url'] ?? '');
+
+        if ($title === '' || $detailText === '') {
+            throw new InvalidArgumentException('Название и полный текст обязательны для заполнения');
+        }
 
         if ($section === 'news') {
             $stmt = $this->pdo->prepare("
-                INSERT INTO news (title, url, preview_text, detail_text, image)
-                VALUES (:title, :url, :preview_text, :detail_text, :image)
-            ");
+            INSERT INTO news (
+                title,
+                url,
+                preview_text,
+                detail_text,
+                image
+            ) VALUES (
+                :title,
+                :url,
+                :preview_text,
+                :detail_text,
+                :image
+            )
+        ");
 
             $stmt->execute([
                 'title' => $title,
@@ -133,14 +149,27 @@ class Site
 
         if ($section === 'services') {
             $stmt = $this->pdo->prepare("
-                INSERT INTO services (title, preview_text, detail_text)
-                VALUES (:title, :preview_text, :detail_text)
-            ");
+            INSERT INTO services (
+                title,
+                url,
+                preview_text,
+                detail_text,
+                image
+            ) VALUES (
+                :title,
+                :url,
+                :preview_text,
+                :detail_text,
+                :image
+            )
+        ");
 
             $stmt->execute([
                 'title' => $title,
+                'url' => $url,
                 'preview_text' => $previewText,
                 'detail_text' => $detailText,
+                'image' => $image,
             ]);
 
             return;
@@ -148,17 +177,35 @@ class Site
 
         if ($section === 'portfolio') {
             $stmt = $this->pdo->prepare("
-                INSERT INTO portfolio (title, preview_text, detail_text, image, project_url)
-                VALUES (:title, :preview_text, :detail_text, :image, :project_url)
-            ");
+            INSERT INTO portfolio (
+                title,
+                url,
+                preview_text,
+                detail_text,
+                image,
+                project_url
+            ) VALUES (
+                :title,
+                :url,
+                :preview_text,
+                :detail_text,
+                :image,
+                :project_url
+            )
+        ");
 
             $stmt->execute([
                 'title' => $title,
+                'url' => $url,
                 'preview_text' => $previewText,
                 'detail_text' => $detailText,
                 'image' => $image,
-                'project_url' => $data['project_url'] ?? null,
+                'project_url' => $projectUrl ?: null,
             ]);
+
+            return;
         }
+
+        throw new InvalidArgumentException('Неизвестный раздел');
     }
 }
