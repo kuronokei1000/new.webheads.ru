@@ -75,13 +75,15 @@ class Database
 ";
 
         $queries[] = "
-    CREATE TABLE IF NOT EXISTS services (
+    CREATE TABLE IF NOT EXISTS portfolio (
         id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         url VARCHAR(255) UNIQUE,
         preview_text TEXT,
         detail_text TEXT NOT NULL,
+        technologies VARCHAR(255),
         image VARCHAR(255),
+        project_url VARCHAR(255),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ";
