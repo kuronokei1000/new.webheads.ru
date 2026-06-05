@@ -119,18 +119,27 @@
                         <h3>
                             Оптово-розничный магазин тканей и текстиля
                         </h3>
+                        <a href="/portfolio/oldos_ru/" class="button" target="_blank">
+                            Подробнее
+                        </a>
                     </div>
                     <div class="portfolio-card">
                         <img src="/assets/img/portfolio/2.png" alt="">
                         <h3>
-                            Интернет-магазин электротранспорта и комплектующих
+                            Интернет-магазин электротранспорта
                         </h3>
+                        <a href="/portfolio/white_siberia/" class="button" target="_blank">
+                            Подробнее
+                        </a>
                     </div>
                     <div class="portfolio-card">
                         <img src="/assets/img/portfolio/3.png" alt="">
                         <h3>
                             Интернет-магазин иностранной литературы
                         </h3>
+                        <a href="/portfolio/shop_talisman_online/" class="button" target="_blank">
+                            Подробнее
+                        </a>
                     </div>
                 </div>
             </div>

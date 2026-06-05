@@ -43,6 +43,7 @@ class Site
 
     /**
      * Проверяет валидность капчи от Yandex SmartCaptcha
+     * На сервере должен быть установлен PHP c расширением curl
      * @param string $token
      * @return bool
      */
