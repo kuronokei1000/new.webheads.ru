@@ -26,27 +26,6 @@
                 </ul>
             </div>
 
-            <div class="footer__contacts">
-                <h3>Контакты</h3>
-
-                <ul>
-                    <li>
-                        Email:
-                        <a href="mailto:a@webheads.ru">a@webheads.ru</a>
-                    </li>
-
-                    <li>
-                        Телефон:
-                        <a href="tel:+79058030638">+7 (905) 803-06-38</a>
-                    </li>
-
-                    <li>
-                        Telegram:
-                        <a href="https://t.me/fomdim" target="_blank">@fomdim</a>
-                    </li>
-                </ul>
-            </div>
-
         </div>
 
         <div class="footer__bottom">
