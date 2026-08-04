@@ -22,31 +22,6 @@
                             разработки, поддержки или доработки вашего проекта.
                         </p>
 
-                        <div class="contacts-page__items">
-
-                            <div class="contacts-page__item">
-                                <span>Email</span>
-                                <a href="mailto:a@webheads.ru">
-                                    a@webheads.ru
-                                </a>
-                            </div>
-
-                            <div class="contacts-page__item">
-                                <span>Телефон</span>
-                                <a href="tel:+79058030638">
-                                    +7 (905) 803-06-38
-                                </a>
-                            </div>
-
-                            <div class="contacts-page__item">
-                                <span>Telegram</span>
-                                <a href="https://t.me/fomdim" target="_blank">
-                                    @fomdim
-                                </a>
-                            </div>
-
-                        </div>
-
                     </div>
 
                     <form action="/ajax/feedback.php" method="POST" class="feedback-form contacts-page__form">
